@@ -20,6 +20,9 @@ async function loginToIeee () {
   });
   
   await page.goto('https://www.ieee.org/');
+
+  console.log('-- Reached the Home page --');
+
   await page.click('.sign-in-cls');
 
   const usernameFieldSelector = '#username';
@@ -27,6 +30,8 @@ async function loginToIeee () {
   const signinButtonSelector = '#modalWindowRegisterSignInBtn';
 
   await page.waitForSelector(usernameFieldSelector, { visible: true });
+
+  console.log('-- Reached the Login page --');
 
   const authenticator = new Authenticator(
     page,
@@ -38,6 +43,8 @@ async function loginToIeee () {
   );
 
   await authenticator.login();
+
+  console.log('-- Login executed --');
 
   await browser.close();
 }

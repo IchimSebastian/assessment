@@ -25,7 +25,7 @@ async function init () {
 
   const testValue = '253';
 
-  console.log('Test value: ' + testValue);
+  console.log('-- Test value: ' + testValue);
 
   async function convert (inputValue, inputFieldSelector, convertButtonSelector, resultFieldSelector) {
     const inputElementHandle = await page.$(inputFieldSelector);
@@ -53,7 +53,7 @@ async function init () {
     '#y'
   );
 
-  console.log('Binary conversion result: ' + binaryConversionResult);
+  console.log('-- Binary conversion result: ' + binaryConversionResult);
 
   page.select('#unit1', 'Binary');
   page.select('#unit2', 'Decimal');
@@ -67,7 +67,7 @@ async function init () {
     '#y'
   );
 
-  console.log('Decimal conversion result: ' + decimalConversionResult);
+  console.log('-- Decimal conversion result: ' + decimalConversionResult);
   
   await page.screenshot({ path: 'decimal-conversion.png' });
   
@@ -80,7 +80,7 @@ async function init () {
     '#resulttxt'
   );
 
-  console.log('Hexadecimal conversion result: ' + hexadecimalConversionResult);
+  console.log('-- Hexadecimal conversion result: ' + hexadecimalConversionResult);
 
   await browser.close();
 }
